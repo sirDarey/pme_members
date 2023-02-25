@@ -2,7 +2,7 @@
 *A simple API to manage PME Members.*
 
 ###### Tech Stack Used: 
-    `Java`, `SpringBoot`, `MySQL DB`
+        Java, SpringBoot, MySQL DB
 
 ***Author: Sir Darey***
 
@@ -35,10 +35,40 @@
         } 
 
 
-###  Sample Json `RESPONSE` For `POST`, `GET` and `PUT`
+###  Sample Json `RESPONSE` For `POST`
 
         {
             "message": "New Member Created Successfully",
+            "data": {
+                "memberId": 1,
+                "firstName": "Sir",
+                "lastName": "Darey",
+                "email": "darey1oguns@gmail.com",
+                "phoneNo": "+2347010854698",
+                "address": "address address address address  address",
+                "track": "Backend",
+                "stack": [
+                    {
+                        "stackId": 5,
+                        "name": "Java"
+                    },
+                    {
+                        "stackId": 6,
+                        "name": "SpringBoot"
+                    }
+                ],
+                "memberEnabled": false,
+                "lastLogin": null,
+                "dateRegistered": "25-02-2023 14:15:26",
+                "lastFailedLogin": null
+            }
+        }
+
+
+###  Sample Json `RESPONSE` For `GET`
+
+        {
+            "message": "Retrieved Member's Details Successfully",
             "data": {
                 "memberId": 1,
                 "firstName": "Sir",
@@ -77,6 +107,36 @@
             "track" : "Backend",
             "stack" : ["Java" , "SpringBoot"]
     }
+
+
+###  Sample Json `RESPONSE` For `PUT`
+
+        {
+            "message": "Member's Details UPDATED Successfully",
+            "data": {
+                "memberId": 1,
+                "firstName": "Sir",
+                "lastName": "Darey",
+                "email": "darey1oguns@gmail.com",
+                "phoneNo": "+2347010854698",
+                "address": "address address address address  address",
+                "track": "Backend",
+                "stack": [
+                    {
+                        "stackId": 5,
+                        "name": "Java"
+                    },
+                    {
+                        "stackId": 6,
+                        "name": "SpringBoot"
+                    }
+                ],
+                "memberEnabled": false,
+                "lastLogin": null,
+                "dateRegistered": "25-02-2023 14:15:26",
+                "lastFailedLogin": null
+            }
+        }
 
 
 ###  Available List of `stack` for any Json request

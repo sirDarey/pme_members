@@ -42,6 +42,7 @@ public class AdditionUtils {
 	}
 
 	public boolean PasswordMatch (String password, String confirmPassword) {
+
 		return password.equals(confirmPassword);
 	}
 

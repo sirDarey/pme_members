@@ -11,6 +11,7 @@
 	<groupId>com.pme</groupId>
 	<artifactId>pme-api-members</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>pme-api-members</name>
 	<description>PME API for Members Management</description>
 	<properties>

@@ -2,8 +2,8 @@ package com.pme;
 
 import com.pme.entity.TechStack;
 import com.pme.repo.StackRepo;
-import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
-public class PmeApiMembersApplication extends SpringBootServletInitializer {
+public class PmeApiMembersApplication extends SpringBootServletInitializer  implements CommandLineRunner {
 
 	private final StackRepo stackRepo;
 
@@ -26,8 +26,13 @@ public class PmeApiMembersApplication extends SpringBootServletInitializer {
 		SpringApplication.run(PmeApiMembersApplication.class, args);
 	}
 
-	@PostConstruct  //Initializes these entries to DB at application start up
-	public void initStacks() {
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(PmeApiMembersApplication.class);
+	}
+
+	@Override
+	public void run(String... args) {
 		List<TechStack> stacks = Arrays.asList(
 				new TechStack(null, "JavaScript"),
 				new TechStack(null, "React"),
@@ -44,11 +49,4 @@ public class PmeApiMembersApplication extends SpringBootServletInitializer {
 
 		stackRepo.saveAll(stacks);
 	}
-
-
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(PmeApiMembersApplication.class);
-	}
-
 }

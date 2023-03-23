@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
-public class PmeApiMembersApplication extends SpringBootServletInitializer  implements CommandLineRunner {
+public class PmeApiMembersApplication extends SpringBootServletInitializer  /*implements CommandLineRunner*/ {
 
 	private final StackRepo stackRepo;
 
@@ -31,22 +31,22 @@ public class PmeApiMembersApplication extends SpringBootServletInitializer  impl
 		return builder.sources(PmeApiMembersApplication.class);
 	}
 
-	@Override
-	public void run(String... args) {
-		List<TechStack> stacks = Arrays.asList(
-				new TechStack(null, "JavaScript"),
-				new TechStack(null, "React"),
-				new TechStack(null, "Python"),
-				new TechStack(null, "Django"),
-				new TechStack(null, "Java"),
-				new TechStack(null, "SpringBoot"),
-				new TechStack(null, "C#"),
-				new TechStack(null, ".NET Core"),
-				new TechStack(null, "PHP"),
-				new TechStack(null, "Flutter")
-
-		);
-
-		stackRepo.saveAll(stacks);
-	}
+//	@Override
+//	public void run(String... args) {
+//		List<TechStack> stacks = Arrays.asList(
+//				new TechStack(null, "JavaScript"),
+//				new TechStack(null, "React"),
+//				new TechStack(null, "Python"),
+//				new TechStack(null, "Django"),
+//				new TechStack(null, "Java"),
+//				new TechStack(null, "SpringBoot"),
+//				new TechStack(null, "C#"),
+//				new TechStack(null, ".NET Core"),
+//				new TechStack(null, "PHP"),
+//				new TechStack(null, "Flutter")
+//
+//		);
+//
+//		stackRepo.saveAll(stacks);
+//	}
 }

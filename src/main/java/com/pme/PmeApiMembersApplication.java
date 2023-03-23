@@ -6,12 +6,14 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
-public class PmeApiMembersApplication {
+public class PmeApiMembersApplication extends SpringBootServletInitializer {
 
 	private final StackRepo stackRepo;
 
@@ -41,6 +43,12 @@ public class PmeApiMembersApplication {
 		);
 
 		stackRepo.saveAll(stacks);
+	}
+
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(PmeApiMembersApplication.class);
 	}
 
 }
